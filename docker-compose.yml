@@ -1,0 +1,14 @@
+version: '3'
+services:
+  database:
+    image: postgres
+    restart: always 
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=1234Abc
+      - POSTGRES_DB=mydatabase 
+      - DATABASE_URL=postgres://myuser:1234Abc@localhost:5432/mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data 
